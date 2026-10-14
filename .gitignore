@@ -25,3 +25,5 @@ models/*
 figures/*
 !models/.gitkeep
 !figures/.gitkeep
+# Dataset solver compilation cache
+.cache/
