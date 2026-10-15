@@ -7,6 +7,7 @@ import numpy as np
 from src.dataset import DEFAULT_SOLVER, generate_bonds, load_solver, pack_bonds, total_percolates, unpack_bonds
 
 
+@unittest.skipUnless(DEFAULT_SOLVER.is_file(), "Optional reference research solver is not installed")
 class DatasetTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

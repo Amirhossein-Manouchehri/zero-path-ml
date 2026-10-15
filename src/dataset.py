@@ -77,16 +77,25 @@ def total_percolates(edges, solver):
     Unlike that function, accept an existing configuration so X and y refer
     to the same realization. No cross-window criterion is applied.
     """
+    return total_percolates_with_length(edges, solver)[0]
+
+
+def total_percolates_with_length(edges, solver):
+    """Return detection and first-found path length using the same search order.
+
+    A length of zero means no spanning path was detected. Positive lengths
+    are the reference solver's returned lengths, not certified shortest paths.
+    """
     L = edges.shape[0]
     for start_row, target_row in ((L-1, 0), (0, L-1)):
         for idx in range(L):
             start_col = L // 2 + (-1)**idx * ((idx+1)//2)
-            percolated, _ = solver.find_reachable_points_no_pbc(
+            percolated, length = solver.find_reachable_points_no_pbc(
                 L, edges, start_row=start_row, start_col=start_col, target_row=target_row
             )
             if percolated == 1:
-                return 1
-    return 0
+                return 1, int(length)
+    return 0, 0
 
 
 def build_dataset(samples, L, p_values, seed, solver_path):

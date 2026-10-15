@@ -1,0 +1,9 @@
+{
+  "original_checkpoint_sha256": "2fcf971911d60acd70474a423911073de3e9066364f31e47b05bbe3612b9aa49",
+  "original_dataset_sha256": "119c8f950684beeec95b328d63aebc6e359437c11fe17d1a2d00c6839ce7c04e",
+  "files": {
+    "model.pt": "7e7b9024e1c6f0732b559de28ebe329ffd12bc5036c13271a5af4a12908cad06",
+    "L36_test.npz": "ad7d74293642bd70f7570d217038e21121fbeb31431474a9c0ea8c0e3c7d8825",
+    "results.json": "e8f106f66662e5db08e6111f22c5c639127f623b714eb008333a3e9add8aedfe"
+  }
+}
